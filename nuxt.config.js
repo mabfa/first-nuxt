@@ -1,10 +1,13 @@
 import colors from 'vuetify/es5/util/colors'
 import webpack from 'webpack'
-
-export default {
+require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` })
+module.exports = {
+   
+  mode: 'universal',
+  // export default {
   // Target (https://go.nuxtjs.dev/config-target)
   // target: 'server',
-  mode: 'universal',
+
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -35,6 +38,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    ['@nuxtjs/dotenv', { filename: `.env.${process.env.NODE_ENV}` }]
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -44,6 +48,7 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
+    '@nuxtjs/auth',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -54,7 +59,7 @@ export default {
     customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: false,
-      light:true,
+      light: true,
       themes: {
         dark: {
           primary: colors.blue.darken2,
