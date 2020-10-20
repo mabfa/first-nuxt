@@ -1,0 +1,17 @@
+<section class="mabfa">
+  <h1>mabfa Component</h1>
+  <br>
+  <p>{{baseUrl}}</p>
+  <br>
+  <p v-if="token">
+    <p style="width: 100%; line-height: 22px; background-color: aqua; word-wrap: break-word;">{{token}}</p>
+    <hr>
+    <br>
+  <div v-for="(item,index) in allStatus">
+    {{item.code}}
+    <br>
+    {{item.message}}
+    <hr>
+  </div>
+  </p>
+</section>
