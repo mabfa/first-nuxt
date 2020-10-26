@@ -1,0 +1,18 @@
+<section class="skeleton">
+    <Skeleton  v-if="firstLoad" />
+  <div class="profile-card" v-else>
+    <div class="profile-image">
+      <img
+        class="profile-image__border"
+        src="https://learnvue.co/wp-content/uploads/2020/04/img-border.png"
+      />
+      <img class="profile-image__img" :src="userData.pic" />
+    </div>
+    <div class="profile-info">
+      <span> Written By </span>
+      <h3>{{ userData.name }}</h3>
+      <p>{{ userData.bio }}</p>
+    </div>
+  </div>
+  
+</section>

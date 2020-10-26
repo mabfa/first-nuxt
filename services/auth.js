@@ -9,7 +9,7 @@ class auth {
     );
   }
 
-  login() {
+  geustLogin() {
     return mainAxios.post(
       "/api/v1/auth",
       {

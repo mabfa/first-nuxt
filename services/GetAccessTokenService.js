@@ -2,7 +2,7 @@ class GetAccessTokenService {
   constructor() {}
 
   GetAccessToken() {
-    return localStorage.getItem("accessToken");
+    return localStorage.getItem("access_token");
   }
   getMabfa() {
     return localStorage.getItem("mabfa");

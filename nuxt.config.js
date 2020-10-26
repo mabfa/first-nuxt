@@ -52,8 +52,42 @@ module.exports = {
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
-
+  axios: {
+    baseURL:process.env.baseUrl
+  },
+  auth: {
+    redirect: false,
+    localStorage: {
+      prefix: 'auth.'
+    },
+    cookie: {
+      prefix: 'auth.',
+      options: {
+        path: '/'
+      }
+    },
+    token: {
+      prefix: 'token_'
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: '/api/v1/auth',
+            method: 'post',
+            propertyName: 'access_token'
+          },
+          logout: false,
+          user: {
+            url: '/api/v2/users/get_user',
+            method: 'post',
+            propertyName: ''
+          }
+        },
+        tokenType: 'JWT'
+      }
+    }
+  },
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],

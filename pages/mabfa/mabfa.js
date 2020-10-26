@@ -1,5 +1,5 @@
 import authService from "../../services/auth";
-import searchService from "../../services/searchServiceice";
+import searchService from "../../services/searchService";
 export default {
   name: "mabfa",
   components: {},
